@@ -1,7 +1,11 @@
 package com.demo;
 
 import java.util.Scanner;
-
+/**
+ * 
+ * @author Nathalie Bernard
+ *
+ */
 public class JeuDuPendu {
 	
 	/***
