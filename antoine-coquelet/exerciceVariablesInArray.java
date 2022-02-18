@@ -15,7 +15,7 @@ import java.util.Random;
 * Sinon le nombre d'occurrences s'affiche.
 */
 
-public class exerciceVariablesInArray {
+public class ExerciceVariablesInArray {
 
     public static void main(String[] args) {
         //Definir un tableau d'elements de type entier contenant 15 elements.
