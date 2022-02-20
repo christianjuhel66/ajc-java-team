@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/util
+   		    http://www.springframework.org/schema/util/spring-util.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.github.constructeur"/>
+
+    <bean id="maison" class="com.github.constructeur.entities.constructions.Maison">
+        <property name="denomination" value="Petit pavillon"/>
+        <property name="surfaceEnM2" value="60"/>
+        <property name="possedePiscine" value="false"/>
+    </bean>
+
+    <bean name="materiau_bois" class="com.github.constructeur.entities.materiaux.Bois"/>
+    <bean name="materiau_pierre" class="com.github.constructeur.entities.materiaux.Beton"/>
+    <bean name="materiau_ciment" class="com.github.constructeur.entities.materiaux.Ciment"/>
+
+
+    <bean id="artisan_plombier" class="com.github.constructeur.entities.personnes.Plombier">
+        <property name="nom" value="Duku"/>
+        <property name="prenom" value="Harry"/>
+        <property name="tarif" value="120"/>
+    </bean>
+
+    <bean id="artisan_menuisier" class="com.github.constructeur.entities.personnes.Menuisier">
+        <property name="nom" value="Michel"/>
+        <property name="prenom" value="Pech"/>
+        <property name="tarif" value="200"/>
+    </bean>
+
+
+    <bean id="devis_maison" class="com.github.constructeur.entities.Devis">
+        <property name="construction" ref="maison"/>
+        <property name="listeMateriaux">
+            <list>
+                <ref bean="materiau_bois"/>
+                <ref bean="materiau_pierre"/>
+                <ref bean="materiau_ciment"/>
+                <!-- Ici des ref à des bean de matériaux -->
+            </list>
+        </property>
+        <property name="listeArtisans">
+            <list>
+                <!-- Ici des ref à des bean d'artisans -->
+            </list>
+        </property>
+    </bean>
+
+    <bean id="testContrat" class="com.github.constructeur.entities.Contrat"/>
+
+    <!--<util:list id>
+
+
+
+    </util:list>-->
+
+
+</beans>

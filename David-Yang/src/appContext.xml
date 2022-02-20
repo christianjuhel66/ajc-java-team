@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					http://www.springframework.org/schema/beans/spring-beans.xsd 
+					http://www.springframework.org/schema/context 
+					http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- Définir les Dépendances --> 		
+	<bean name ="devisA" class="com.demo.entity.ImplEtude"> </bean>
+	<bean name ="decoupe" class="com.demo.entity.ImplDecoupageMateriaux"> </bean>
+	
+	<bean id="architecteA" class="com.demo.entity.Architecte"> 
+		<constructor-arg ref="devisA"/>
+	</bean>
+	
+	<bean id="charpentierA" class="com.demo.entity.Charpentier" scope="prototype"> 
+			<constructor-arg ref="devisA"/>
+			<constructor-arg ref="decoupe"/>
+	</bean>
+	
+	<bean id="charpentierB" class="com.demo.entity.Charpentier" scope="prototype"> 
+			<constructor-arg ref="devisA"/>
+			<constructor-arg ref="decoupe"/>
+	</bean>
+	
+
+</beans>

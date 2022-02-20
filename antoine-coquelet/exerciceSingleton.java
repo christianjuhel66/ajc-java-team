@@ -5,7 +5,7 @@ Le Singleton: patron de conception de création qui s’assure de l’existence 
 Il fournit un unique point d’accès vers cet objet.
 */
 
-public class exerciceSingleton {
+public class ExerciceSingleton {
 
     public static final class Singleton {
 
