@@ -7,23 +7,17 @@ public class Livre {
     private String titre;
     private String auteur;
     private float prix;
-    //private String editeur;
-    //private LinkedHashMap<String, String> editeursListe;
+    private String editeur;
+    private LinkedHashMap<String, String> editeursListe;
 
-    /*public Livre(){
+    public Livre(){
         editeursListe = new LinkedHashMap<>();
-        editeursListe.put("HAC","Hachette");
-        editeursListe.put("EDI","Editis");
-        editeursListe.put("GAL","Gallimard");
-        editeursListe.put("ALB","Albin Michel");
-        editeursListe.put("ACT","Actes Sud");
+        editeursListe.put("Hachette","Hachette");
+        editeursListe.put("Editis","Editis");
+        editeursListe.put("Gallimard","Gallimard");
+        editeursListe.put("Albin Michel","Albin Michel");
+        editeursListe.put("Actes Sud","Actes Sud");
     }
-
-    public Livre(String titre, String auteur, Integer prix) {
-        this.titre = titre;
-        this.auteur = auteur;
-        this.prix = prix;
-    }*/
 
     public String getTitre() {
         return titre;
@@ -49,7 +43,6 @@ public class Livre {
         this.prix = prix;
     }
 
-    /*
     public String getEditeur() {
         return editeur;
     }
@@ -62,5 +55,5 @@ public class Livre {
     }
     public void setEditeursListe(LinkedHashMap<String, String> editeursListe) {
         this.editeursListe = editeursListe;
-    }*/
+    }
 }

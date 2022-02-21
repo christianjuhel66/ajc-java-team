@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +10,31 @@ pageEncoding="ISO-8859-1"%>
 </head>
 <body>
 <div class="container">
-    <form action="traitementForm" modelAttribute="livre">
-        <h1>Formulaire: Livre</h1>
-        <placeholder="Formulaire" />
-        Titre du livre: <input type="text" path="titre"/></br>
-        Auteur du livre: <input type="text" path="auteur"/></br>
-        Prix du livre: <input type="text" path="prix"/></br>
-        <input type="submit"/>
-    </form>
+    <h1>Formulaire: Livre</h1>
+    <form:form action="traitementForm" modelAttribute="livre">
+    <table class="table">
+    <tr>
+    <td>Titre du livre:</td>
+    <td><form:input path="titre"/></td>
+    </tr>
+    <tr>
+        <td>Auteur du livre:</td>
+        <td><form:input path="auteur"/></td>
+    </tr>
+    <tr>
+         <td>Prix du livre:</td>
+         <td><form:input path="prix"/></td>
+    </tr>
+     <tr>
+        <td>Editeur du livre:</td>
+        <td><form:select path="editeur">
+              <form:options items="${livre.editeursListe}" />
+           </form:select>
+        </td>
+     </tr>
+    </table>
+    <input type="submit" value="Envoyer">
+    </form:form>
 </div>
 </body>
 </html>
