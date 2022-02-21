@@ -1,0 +1,15 @@
+TP
+
+Vous êtes une agence de travaux 
+Vous devez gérer des artisans avec différents corps de métier.
+Ces artisans doivent pouvoir par eux-même réaliser des devis.
+Mettre à leur disposition une fonctionnalité qui sera susceptible 
+d'évoluer selon différentes contraintes.
+Concevoir une interface de découpage de matériaux.
+Concevoir les éléments logiciels qui permettent 
+d'adapter le découpage à différents matériaux ou contraintes.
+
+Répondre à ces exigences en utilisant le langage Java et le framework Spring.
+Votre applicationn devra mettre en oeuvre les mécanismes d'inversion de 
+contrôle, d'injection de dépendance et exploiter les principes de 
+programmation par contrat.
