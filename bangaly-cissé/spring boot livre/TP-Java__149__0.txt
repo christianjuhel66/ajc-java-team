@@ -1,0 +1,75 @@
+TP Java
+-------
+
+a)
+A partir d'un nouveau projet (ou d'un projet de demo HelloWorld) : 
+
+Ecrire une classe Livre avec :
+String titre
+String auteur
+Integer prix
+
+Ecrire un formulaire pour un livre affichable grâce à l'url suivante : "localhost:8080/afficheLivreForm" avec les données suivantes : 
+- Titre : input text
+- Auteur : input text
+- Prix : input text/number
+
+Envoyer ces données de formulaire dans un attribut (modelAttribute) avec l'action "traitementForm"
+Et les afficher dans une jsp de "confirmation"
+
+
+
+b) Rajouter dans le formulaire
+
+- Editeur : select list
+
+
+Choix possible d'éditeur : 
+- Hachette
+- Editis
+- Gallimard
+- Albin Michel
+- Actes Sud
+
+Modifier en conséquence : 
+ - la classe Livre
+ - la jsp de confirmation
+
+
+c) Rajouter dans le formulaire
+
+- Edition : bouton radio
+
+
+Choix possible d'edition : 
+- Normal
+- Poche
+
+
+Modifier en conséquence : 
+ - la classe Livre
+ - la jsp de confirmation
+ 
+
+d) Rajouter dans le formulaire
+
+- Genre : checkbox
+
+Choix possibles de genre : 
+- Classique
+- Science-fiction
+- Aventure
+- Policier
+
+
+Modifier en conséquence : 
+ - la classe Livre
+ - la jsp de confirmation
+
+
+
+
+
+
+
+
