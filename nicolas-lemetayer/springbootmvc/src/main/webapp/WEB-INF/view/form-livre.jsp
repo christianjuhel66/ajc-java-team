@@ -32,6 +32,21 @@
            </form:select>
         </td>
      </tr>
+     <tr>
+          <td>Edition du livre:</td>
+         <td>
+          <form:radiobuttons path="edition" items="${livre.editionsListe}" />
+        </td>
+     </tr>
+     <tr>
+         <td>Genres du livre:</td>
+         <td>
+               Classique: <form:checkbox path="genres" value="Classique" /></br>
+               Science-fiction: <form:checkbox path="genres" value="Science-fiction" /></br>
+               Aventure: <form:checkbox path="genres" value="Aventure" /></br>
+               Policier: <form:checkbox path="genres" value="Policier" /></br>
+         </td>
+     </tr>
     </table>
     <input type="submit" value="Envoyer">
     </form:form>

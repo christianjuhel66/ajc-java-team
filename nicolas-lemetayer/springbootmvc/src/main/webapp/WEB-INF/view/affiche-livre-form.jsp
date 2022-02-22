@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,17 @@
         </tr>
         <tr>
            <td>Editeur du livre</td><td>${livre.editeur}</td>
+        </tr>
+        <tr>
+             <td>Edition du livre</td><td>${livre.edition}</td>
+        </tr>
+        <tr>
+              <td>Genres du livre</td>
+              <td>
+                 <c:forEach var="temp" items="${livre.genres}">
+                     ${temp}</br>
+                 </c:forEach>
+              </td>
         </tr>
     </table>
 </div>

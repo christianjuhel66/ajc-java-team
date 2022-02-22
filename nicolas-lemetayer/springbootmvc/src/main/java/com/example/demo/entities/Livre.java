@@ -9,6 +9,9 @@ public class Livre {
     private float prix;
     private String editeur;
     private LinkedHashMap<String, String> editeursListe;
+    private String edition;
+    private LinkedHashMap<String, String> editionsListe;;
+    private String[] genres;
 
     public Livre(){
         editeursListe = new LinkedHashMap<>();
@@ -17,6 +20,11 @@ public class Livre {
         editeursListe.put("Gallimard","Gallimard");
         editeursListe.put("Albin Michel","Albin Michel");
         editeursListe.put("Actes Sud","Actes Sud");
+
+        editionsListe = new LinkedHashMap<>();
+        editionsListe.put("Classique","Classique");
+        editionsListe.put("Poche","Poche");
+
     }
 
     public String getTitre() {
@@ -55,5 +63,29 @@ public class Livre {
     }
     public void setEditeursListe(LinkedHashMap<String, String> editeursListe) {
         this.editeursListe = editeursListe;
+    }
+
+    public String getEdition() {
+        return edition;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    public LinkedHashMap<String, String> getEditionsListe() {
+        return editionsListe;
+    }
+
+    public void setEditionsListe(LinkedHashMap<String, String> editionsListe) {
+        this.editionsListe = editionsListe;
+    }
+
+    public String[] getGenres() {
+        return genres;
+    }
+
+    public void setGenres(String[] genres) {
+        this.genres = genres;
     }
 }
