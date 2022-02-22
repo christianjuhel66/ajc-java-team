@@ -7,7 +7,14 @@
 <title>Livre : vue</title>
 </head>
 <body>
-<p>Le livre ${livre.titre}, écrit par ${livre.auteur}, coute ${livre.prix}. </p>
+<p>Le livre ${livre.titre}, écrit par ${livre.auteur}, coute ${livre.prix} euros
+aux éditions ${livre.editeur}, au format ${livre.format}. </p>
 
+<p>Il figure aux genres :
+<ul>
+<c:forEach var="genres" items="${livre.genres }">
+<li>${genres}</li>
+</c:forEach>
+</ul></p>
 </body>
 </html>

@@ -1,27 +1,25 @@
 package com.librairie.livres.controller;
 
-import javax.servlet.http.HttpServlet;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.librairie.livres.model.Livre;
 
 @Controller
 public class LivresController {
 
-    @GetMapping({ "/", "/formulaire" })
-    public String afficheLivreForm() {
-
-	System.out.println("Passe par HelloController");
-	return "livre-form";
+    @RequestMapping({ "/", "/livreForm" })
+    public String afficherForm(Model model) {
+	model.addAttribute("livre", new Livre());
+	return "livres-form";
 
     }
 
-    @RequestMapping("/postLivreForm")
-    public String traiteLivreForm(HttpServlet request, Model model) {
-
+    @RequestMapping("/processForm")
+    public String processForm(@ModelAttribute("livre") Livre unLivre) {
 	return "livre-vue";
-
     }
+
 }
