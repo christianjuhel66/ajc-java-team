@@ -58,7 +58,10 @@ public class DemoRestControllerApplication implements CommandLineRunner {
 		fruits.add(fruit1);
 		fruits.add(fruit2);
 
-		Panier panier = new Panier(fruits,"3.5");
+		List<Legume> legumes = new ArrayList();
+		legumes.add(legume1);
+
+		Panier panier = new Panier(fruits,legumes,"3.5");
 		Long id = repoPanier.save(panier);
 		System.out.println(id);
 		Panier recupPanier = repoPanier.findById(id);
