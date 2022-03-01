@@ -1,0 +1,21 @@
+
+<h1 class="center"> Employes </h1>
+<div class ="container">
+      <div class="row">
+            <div *ngFor="let employe of employes"    class="col s6 m4"  > 
+                  <div [routerLink]="['/employe', employe.id]" class="brand-logo center" class="card horizontal row"  employePreselect="green" >
+                        <div class="card-image" > 
+                              <img src="{{employe.picture}}"   alt ="photo"/>
+                        </div>
+                        <div class="card-stacked">  
+                              <div class="card-content">
+                                    <p>{{employe.name}}</p>
+                                    <p>{{employe.birthDate | date: "dd/MM/yyyy" }} </p>  
+                                    <p *ngFor="let role of employe.roles"
+                                    class='{{role|employeRoleColor}}'>{{role}}</p>
+                              </div>
+                        </div>  
+                  </div>
+            </div>
+      </div>     
+</div>
