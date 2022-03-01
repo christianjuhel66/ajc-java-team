@@ -1,4 +1,4 @@
-package com.example.producteur.crud.dao;
+package com.example.producteur.dao;
 
 import java.util.List;
 
@@ -7,34 +7,35 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.producteur.entity.Producteur;
 
-//méthodes transactionnelles i.e. interactions avec la BDD
+@Repository
 public class DaoProducteurJPA implements DaoInterface {
 
     @Autowired
-    private EntityManager em;
+    private EntityManager entityManager;
 
     @Override
     @Transactional
     public List<Producteur> findAll() {
-	TypedQuery<Producteur> typedQuery = em.createQuery("from Producteur", Producteur.class);
+	TypedQuery<Producteur> typedQuery = entityManager.createQuery("from Producteur", Producteur.class);
 	return typedQuery.getResultList();
     }
 
     @Override
     @Transactional
     public Producteur findById(int id) {
-	em.find(Producteur.class, id);
-	return em.find(Producteur.class, id);
+	entityManager.find(Producteur.class, id);
+	return entityManager.find(Producteur.class, id);
     }
 
     @Override
     @Transactional
     public int save(Producteur producteur) {
-	Producteur storedProducteur = em.merge(producteur);
+	Producteur storedProducteur = entityManager.merge(producteur);
 	return Math.toIntExact((long) storedProducteur.getId());
     }
     // java cannot cast from long to int ? aucun long pourtant
@@ -42,7 +43,7 @@ public class DaoProducteurJPA implements DaoInterface {
     @Override
     @Transactional
     public void deleteById(int id) {
-	Query query = em.createQuery("delete from Producteur where id=:roducteurId");
+	Query query = entityManager.createQuery("delete from Producteur where id=:roducteurId");
 	query.setParameter("producteurId", id);
 
 	query.executeUpdate();

@@ -1,4 +1,4 @@
-package com.example.producteur.crud.dao;
+package com.example.producteur.dao;
 
 import java.util.List;
 
