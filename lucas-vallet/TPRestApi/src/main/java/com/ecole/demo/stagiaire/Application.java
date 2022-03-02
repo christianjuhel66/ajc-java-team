@@ -16,12 +16,12 @@ import com.ecole.demo.stagiaire.service.EntrepriseServiceInterface;
 import com.ecole.demo.stagiaire.service.StagiaireServiceInterface;
 
 @SpringBootApplication
-public class Application implements CommandLineRunner{
+public class Application /*implements CommandLineRunner*/{
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-	
+	/*
 	@Autowired
 	private StagiaireServiceInterface stagiaires;
 
@@ -53,6 +53,6 @@ public class Application implements CommandLineRunner{
 		Entreprise entreprise = new Entreprise();
 		entreprise.setEmployes(listEmploye);
 		entreprises.save(entreprise);
-	}
+	} */
 
 }

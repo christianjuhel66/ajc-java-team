@@ -16,6 +16,8 @@ public interface Dao {
 	public int save(Employe e);
 	public int save(Entreprise e);
 	
+	public int removeEmploye(int id);
+	
 	
 	
 	

@@ -27,4 +27,9 @@ public class EmployeServiceImpl implements EmployeServiceInterface {
 		return dao.save(e);
 	}
 
+	@Override
+	public int remove(int id) {
+		return dao.removeEmploye(id);
+	}
+
 }

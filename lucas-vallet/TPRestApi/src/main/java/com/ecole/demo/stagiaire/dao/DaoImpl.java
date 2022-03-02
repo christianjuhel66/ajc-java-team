@@ -59,4 +59,13 @@ public class DaoImpl implements Dao{
         return entrepriseSaved.getId();
 	}
 
+	@Override
+	@Transactional
+	public int removeEmploye(int id) {
+		em.createQuery("delete from Employe e where e.id=:id")
+		.setParameter("id", id)
+		.executeUpdate();
+		return 0;
+	}
+
 }
